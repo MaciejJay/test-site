@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+            <title>Franek Sterczewski</title>
+            <link rel="stylesheet" href="style.css">
+
+            <script>
+                function copyEvent(id)
+                {
+                    var str = document.getElementById(id);
+                    window.getSelection().selectAllChildren(str);
+                    document.execCommand("Copy")
+                }
+
+                function copyText() {
+                    var secretKey = document.querySelector('button.copyMail').innerText;
+                     if (secretKey) {
+                        navigator.clipboard.writeText(secretKey);
+                        showNotification();
+                    }
+                }
+
+                function showNotification() {
+                    var notificationElement = document.querySelector('.mail h1.notification-message');
+
+                    notificationElement.classList.add('notify');
+                    setTimeout(function() {
+                        notificationElement.classList.remove('notify');
+                    }, 1000);
+                }
+                
+            </script>
+        </head>
+        <body>
+
+            <div class="content">
+                <video autoplay muted loop playsinline src="res/Franek_BG.mp4"></video>
+
+                <div class="main">
+                    
+                    <div class="logo">
+                        <img src="res/franek_logo_2.png" alt="logo Franka">
+                    </div>
+    
+                    <div class="buttons">
+                        <div class="FBicon">
+                            <button onclick="window.open('https://www.facebook.com/FranekSterczewski','_blank')">Facebook</button>
+                        </div>
+                        <div class="TTicon">
+                            <button onclick="window.open('https://twitter.com/f_sterczewski','_blank')">Twitter</button>
+                        </div>
+                        <div class="IGicon">
+                            <button onclick="window.open('https://www.instagram.com/franeksterczewski/','_blank')">Instagram</button>
+                        </div>
+                        <div class="mail">
+                            <button class="copyMail" onclick="copyText()">ahoj@franeksterczewski.pl</button>
+                            <h1 class="notification-message">Skopiowano!</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </body>
+
+    </html>

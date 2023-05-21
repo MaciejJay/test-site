@@ -53,6 +53,11 @@ button:active {
     }
  }
 
+.message {
+    display: grid;
+    place-content: center;
+}
+
 .buttons {
     height: 100%;
     text-align: center;
